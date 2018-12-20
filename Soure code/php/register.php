@@ -1,17 +1,29 @@
 <?php
+    session_start();
+    $tb = null;
+
     if(isset($_POST['btnRegister'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
-        require_once "dbConnect.php";
-        $sql = " INSERT INTO users(username, password, email) VALUES (" ."'" .$username ."','" .md5($password) ."','" .$email ."')";
-        if($conn->query($sql) === TRUE){
-            echo "New record created successfully";
+
+        if($password == $confirmpassword){
+            require_once "dbConnect.php";
+            $sql = " INSERT INTO users(username, password, email) VALUES (" ."'" .$username ."','" .md5($password) ."','" .$email ."')";
+            if($conn->query($sql) == TRUE){
+                $_SESSION['username'] = $username;
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                header("location:infoRegister.php");
+            }
+            else {
+                $tb = "Username hoặc email đã có, mời nhập lại";
+            }
+        } else{
+            $tb = "Mật khẩu nhập lại không đúng";
         }
-        else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+        
     }
     
 ?>
@@ -45,7 +57,10 @@
 
         <label for="confirmPassword"><b>Confirm Password</b></label>
         <input type="password" placeholder="Enter Password" name="confirmpassword" required>
+        <?php
+            echo "<p style='color:red;'>" .$tb ."</p>"; 
 
+        ?>
         <button type="submit" name="btnRegister">Register</button>
     </div>
 </form>

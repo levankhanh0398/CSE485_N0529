@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -30,4 +30,13 @@
     
 
 </body>
-</html>
+</html> -->
+
+<?php
+    $var = null;
+    if (isset($var)) {
+        echo 'this var is set';
+    }else{
+        echo 'this var is not set';
+    }
+?>
