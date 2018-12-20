@@ -6,7 +6,12 @@
         $confirmpassword = $_POST['confirmpassword'];
         require_once "dbConnect.php";
         $sql = " INSERT INTO users(username, password, email) VALUES (" ."'" .$username ."','" .md5($password) ."','" .$email ."')";
-        $conn->query()
+        if($conn->query($sql) === TRUE){
+            echo "New record created successfully";
+        }
+        else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
     
 ?>

@@ -2,13 +2,13 @@
     // mysql_connect("localhost", "root", "");
     // mysql_select_db("websach");
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $ServerName = "localhost";
+    $UserName = "root";
+    $PassWord = "";
     $dbName = "websach";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbName);
+    $conn = new mysqli($ServerName, $UserName, $PassWord, $dbName);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
