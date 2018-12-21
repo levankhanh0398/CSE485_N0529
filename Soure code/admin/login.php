@@ -6,11 +6,11 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        require_once "dbConnect.php";
-        $sql = " SELECT * FROM users WHERE username = '" .$username ."' and password = '" .md5($password) ."'";
+        require_once "../php/dbConnect.php";
+        $sql = " SELECT * FROM users WHERE admin = '" .$username ."' and password = '" .md5($password) ."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
-            $_SESSION['username'] = $username;
+            $_SESSION['usernamead'] = $username;
             header("location:index.php");
         } else{
             $note = "Tài khoản hoặc mật khẩu không đúng";
@@ -46,7 +46,6 @@
             ?>
             <button type="submit" name="btnLogin">Login</button>
         </div>
-        <span class="register">If you do not have an account, please <a href="register.php">register</a></span>
     </form>
 
 

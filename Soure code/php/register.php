@@ -7,7 +7,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
-
+                
         if($password == $confirmpassword){
             require_once "dbConnect.php";
             $sql = " INSERT INTO users(username, password, email) VALUES (" ."'" .$username ."','" .md5($password) ."','" .$email ."')";
@@ -59,7 +59,6 @@
         <input type="password" placeholder="Enter Password" name="confirmpassword" required>
         <?php
             echo "<p style='color:red;'>" .$tb ."</p>"; 
-
         ?>
         <button type="submit" name="btnRegister">Register</button>
     </div>
