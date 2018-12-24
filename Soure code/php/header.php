@@ -79,7 +79,7 @@
                                             <a href="#">Tài khoản</a>
                                             <a href="logout.php">Đăng xuất</a></div>';
                             } else{
-                                echo '<a class="nav-link-login" href="login.php"><i class="fas fa-user"></i>Đăng nhập</a>';
+                                echo '<a class="nav-link-login" href="login.php" style="text-decoration: none;"><i class="fas fa-user"></i>Đăng nhập</a>';
                             }
                         ?>
                     </li>

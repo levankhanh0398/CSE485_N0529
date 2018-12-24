@@ -6,8 +6,8 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        require_once "../php/dbConnect.php";
-        $sql = " SELECT * FROM users WHERE admin = '" .$username ."' and password = '" .md5($password) ."'";
+        require_once "../../php/dbConnect.php";
+        $sql = " SELECT * FROM admin WHERE username = '" .$username ."' and password = '" .md5($password) ."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
             $_SESSION['usernamead'] = $username;
