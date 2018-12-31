@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="../css/pageStyle.css">   
 
     <style>
-        input[type=text], input[type=password], input[type=rePassword]{
-            width: 100%;
+        input[type=text] {
+            width: 30%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -39,7 +39,7 @@
             margin: 8px 0;
             border: none;
             cursor: pointer;
-            width: 100%;
+            width: 20%;
         }
 
         button:hover {
@@ -51,7 +51,7 @@
         }
     </style>
 
-    <title>Quản lý người dùng</title>
+    <title>Chỉnh sửa</title>
 </head>
 <body>
     <?php
@@ -67,7 +67,7 @@
         <div class="title"><p>Cập nhập tài khoản: <?php echo $username; ?></p></div>
             <form action="#" method="POST">
                 <div class="container">
-                    <label for="email"><b>Email</b></label>
+                    <label for="email"><b>Email</b></label><br>
                     <input type="text" value="<?php echo $email; ?>" name="email" required>
                     <?php
                         echo "<p style='color:red;'>" .$note ."</p>"; 

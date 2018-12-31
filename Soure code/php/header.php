@@ -64,12 +64,12 @@
                     <a class="nav-link" href="../php/ebook.php">Sách Điện Tử</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Truyện Tranh</a>
+                    <a class="nav-link" href="../php/comic.php">Truyện Tranh</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Nhập tên sách">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
+            <form class="form-inline my-2 my-lg-0" action="searchBook.php" method="post">
+                <input class="form-control mr-sm-2" type="text" placeholder="Nhập tên sách" name="bookName">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="btnSearch">Tìm Kiếm</button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <?php

@@ -5,24 +5,24 @@
         background-color: #CEF6D8;
     }
     footer .left{
-        width: 400px;
+        width: 300px;
         /* background-color: red; */
         float: left;
         margin-left: 50px;
         margin-top: 20px;
     }
     footer .center{
-        width: 550px;
-        /* background-color: black; */
+        width: 290px;
+        /* background-color: green; */
         float: left;
-        margin-left: 20px;
+        margin-left: 160px;
         margin-top: 20px;
     }
     footer .right{
         width: 290px;
         /* background-color: green; */
         float: left;
-        margin-left: 20px;
+        margin-left: 160px;
         margin-top: 20px;
     }
     p{

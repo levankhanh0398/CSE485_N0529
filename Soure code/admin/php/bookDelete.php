@@ -1,12 +1,12 @@
 <?php
-    $username = $_GET["username"];
+    $idSach = $_GET["idsach"];
+    $tenSach = $_GET["book"];
 
     if(isset($_POST['btnDelete'])){
         require_once "../../php/dbConnect.php";
-        $sql = " delete from users WHERE username = '" .$username ."'";
+        $sql = " delete from sach WHERE idSach = '" .$idSach ."'";
         $conn->query($sql);
-        header("location:userManagement.php");
-
+        header("location:bookManagement.php");
     }
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@
         require_once 'header.php';
     ?>
     <div class="page">
-        <div class="title"><p>Xóa tài khoản: <?php echo $username; ?></p></div>
+        <div class="title"><p>Xóa sách: <?php echo $tenSach; ?></p></div>
             <form action="#" method="POST">
                 <div class="container">
                     <label for="delete"><b>Bạn chắc chắn muốn xóa?</b></label><br>

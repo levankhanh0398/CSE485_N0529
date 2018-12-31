@@ -1,37 +1,98 @@
 .containers{
     background-color: #FAFAFA;
     width: 1242px;
-    height: 400px;
+    height: auto;
     margin-top: 88px;
     margin-left: 49px;
 }
 
-.menu p{
+.menu{
+    width: 1238px;
+    height: 40px;
+    border-bottom: 1px solid;
+}
+
+.title{
+    width: 300px;
+    height: 39px;
+    float: left;
+    /* background-color: red; */
+}
+
+.select{
+    width: 500px;
+    height: 39px;
+    float: left;
+    /* background-color: green; */
+    margin-left: 434px;
+    text-align: right;
+}
+
+.title p{
     margin-left: 20px;
     font-size: 27px;
-    border-bottom: 1px solid;
+}
+
+.select select{
+    font-size: 16px;
+    margin-top: 8px;
 }
 
 .containers-listBook{
     width: 1241px;
-    height: 335px;
+    height: 651px;
 }
 
 .listBook{
     width: 1029px;
-    height: 322px;
+    height: 627px;
     float: left;
 }
 
-.motSach a{
-    color: black;
+.book{
+    float: left;
+    background-color: white;
+    width: 303px;
+    height: 250px;
     margin-left: 40px;
+    margin-top: 30px;
+    border: 1px solid rgb(100, 243, 100);
+
+}
+
+.imgBook{
+    width: 160px;
+    height: 226px;
+    float: left;
+    /* background-color: aqua; */
+    margin-left: 10px;
     margin-top: 10px;
 }
 
-.ctrlPage{
-    margin-left: 1038px;
-    margin-top: -60px;
+.titleBook{
+    width: 115px;
+    height: 200px;
     float: left;
-
+    /* background-color: coral; */
+    margin-top: 20px;
+    margin-left: 10px;
 }
+
+.titleBook a{
+    color: black;
+    text-decoration: none;
+}
+
+.titleBook a:hover:not(.next) {color: rgb(16, 235, 82);}
+
+.ctrlPage{
+    width: 200px;
+    margin-left: 1000px;
+    margin-top: -36px;
+    float: left;
+}
+
+.ctrlPage button{
+    cursor: pointer;
+}
+

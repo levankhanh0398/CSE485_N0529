@@ -49,7 +49,7 @@
     </div>
 
     <div class="container-content">
-        <div class="container-content-left">
+        <!-- <div class="container-content-left">
             <div class="tl"><p>Thể Loại<p></div>
             <ul>
                 <a href="php/vanhoc.php"><p>Văn học</p></a><br>
@@ -62,10 +62,10 @@
                 <a href="php/tienganh.php"><p>Tiếng anh</p></a><br>
                 <a href="php/tamly.php"><p>Tâm lý</p></a><br>
             </ul>
-        </div>
-        <div class="container-content-right">
+        </div> -->
+        <!-- <div class="container-content-right">
             <div class="hot"><p>HOT<p></div>
-        </div>
+        </div> -->
     </div>
 
     <?php

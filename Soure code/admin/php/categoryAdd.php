@@ -3,17 +3,26 @@
    $note = null;
 
    if(isset($_POST['btnAdd'])){
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $tentheloai = $_POST['tentheloai'];
                
         require_once "../../php/dbConnect.php";
-        $sql = " INSERT INTO users(username, password, email) VALUES (" ."'" .$username ."','" .md5($password) ."','" .$email ."')";
-        if($conn->query($sql) == TRUE){
-            $note = "Thêm thành công";
+        $kt = 0;
+        $sql = " Select * from theloai ";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()){
+            if($tentheloai == $row['tenTheLoai']){
+                $kt = 1;
+            }
         }
-        else {
-            $note = "Username hoặc email đã có, mời nhập lại";
+        if($kt == 1){
+            $note = "Thêm thất bại, tên thể loại đâ bị trùng";
+        } else{
+            $sql = " insert INTO theloai(tentheloai) VALUES ('" .$tentheloai ."')";
+            if($conn->query($sql) == TRUE){
+                $note = "Thêm thành công";
+            } else{
+                $note = "Thêm thất bại";
+            }
         }
    }
 ?>
@@ -27,7 +36,7 @@
     <link rel="stylesheet" href="../css/pageStyle.css">   
 
     <style>
-        input[type=text],  input[type=password]{
+        input[type=text]{
             width: 30%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -62,17 +71,11 @@
         require_once 'header.php';
     ?>
     <div class="page">
-        <div class="title"><p>Thêm mới tài khoản</p></div>
+        <div class="title"><p>Thêm mới thể loại</p></div>
             <form action="#" method="POST">
                 <div class="container">
-                    <label for="userName"><b>UserName</b></label><br>
-                    <input type="text" placeholder="Enter Username" name="username" required><br>
-
-                    <label for="email"><b>Email</b></label><br>
-                    <input type="text" placeholder="Enter Email" name="email" required><br>
-
-                    <label for="Password"><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="Tentheloai"><b>Tên thể loại</b></label><br>
+                    <input type="text" placeholder="Nhập tên thể loại" name="tentheloai" required><br>
 
                     <?php
                         echo "<p style='color:red;'>" .$note ."</p>"; 

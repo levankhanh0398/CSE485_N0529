@@ -9,8 +9,8 @@
     $from = ($trang - 1) * $sosach1trang;
 
     if($theloai == "Tất cả"){
-        $sql = " Select idSach, tenSach, anhbia, luotxem from Sach where dangsach = 'Sách điện tử' limit $from, $sosach1trang ";
-        $sql2 = " SELECT COUNT(idSach) as dem FROM sach where dangsach = 'Sách điện tử'";
+        $sql = " Select idSach, tenSach, anhbia, luotxem from Sach where dangsach = 'Truyện tranh' limit $from, $sosach1trang ";
+        $sql2 = " SELECT COUNT(idSach) as dem FROM sach where dangsach = 'Truyện tranh'";
         $sach = $conn->query($sql);
         $demSach =  $conn->query($sql2);
         $row2 = $demSach->fetch_assoc();
@@ -42,8 +42,8 @@
             $idTheLoai = $row['idTheLoai'];
         }
 
-        $sql = " Select idSach, tenSach, anhbia, luotxem from Sach where dangsach = 'Sách điện tử' and idTheLoai = '" .$idTheLoai ."' limit $from, $sosach1trang ";
-        $sql2 = " SELECT COUNT(idSach) as dem FROM sach where idTheLoai = $idTheLoai and dangsach = 'Sách điện tử'";
+        $sql = " Select idSach, tenSach, anhbia, luotxem from Sach where dangsach = 'Truyện tranh' and idTheLoai = '" .$idTheLoai ."' limit $from, $sosach1trang ";
+        $sql2 = " SELECT COUNT(idSach) as dem FROM sach where idTheLoai = $idTheLoai and dangsach = 'Truyện tranh'";
         $sach = $conn->query($sql);
         $demSach =  $conn->query($sql2);
         $row2 = $demSach->fetch_assoc();
@@ -62,7 +62,7 @@
                 echo "</div>";
                 echo "<div class='titleBook'>";
                 echo "<a href='infoBook.php?tensach=" .$row["tenSach"] ."&id=" .$row['idSach'] ."'>" .$row["tenSach"]. "</a>";
-                echo "<p class='view' style= margin-top:150px;'>Lượt xem: " .$row['luotxem'] ."</p>";              
+                echo "<p class='view' style= margin-top:150px;'>Lượt xem: " .$row['luotxem'] ."</p>";
                 echo "</div>";
                 echo "</div>";
             }

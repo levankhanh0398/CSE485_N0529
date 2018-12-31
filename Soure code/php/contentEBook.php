@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    $idsach = $_GET["idsach"];
+    if(isset($_SESSION['username'])){
+        require_once "dbConnect.php";
+        $sql = " SELECT luotxem from sach where idsach = " ."'". $idsach ."'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $luotxem = $row['luotxem'];
+        $luotxem = (int)$luotxem;
+        $luotxem = $luotxem + 1;
+        $luotxem = (string)$luotxem;
+
+        $sql = " update sach set luotxem ='" .$luotxem ."' WHERE idSach = '" .$idsach ."'";
+        $conn->query($sql);
+    }
+    else{
+        header("location:login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -33,15 +53,14 @@
     </style>
     <div class="mucluc">
         <?php
-            $idsach = $_GET["idsach"];
             require_once "dbConnect.php";
-
-            $sql = " SELECT chuong from noidungsach where idsach = " ."'". $idsach ."'";
+            
+            $sql = " SELECT tenchuong from noidungsach where idsach = " ."'". $idsach ."'";
             $sach = $conn->query($sql);
 
             echo "Chọn chương:  <select>";
             while($row = $sach->fetch_assoc()){
-                echo "<option>" .$row["chuong"] ."</option>";
+                echo "<option>" .$row["tenchuong"] ."</option>";
             }
             echo "</select>";
 

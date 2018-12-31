@@ -55,7 +55,8 @@
         margin-left: 1115px;
         font-size: 19px;
     }
-
+    ul li a:hover:not(.next) {background-color: red;}
+    .ma a:hover:not(.next) {background-color: red;}
 </style>
 
 <div class="menu">

@@ -1,12 +1,15 @@
 <?php
-    $username = $_GET["username"];
+    $idsach = $_GET["idsach"];
+    $chuong = $_GET["chuong"];
 
     if(isset($_POST['btnDelete'])){
         require_once "../../php/dbConnect.php";
-        $sql = " delete from users WHERE username = '" .$username ."'";
-        $conn->query($sql);
-        header("location:userManagement.php");
-
+        $sql = " delete from noidungsach WHERE idSach = '" .$idsach ."' and tenchuong = '" .$chuong ."'";
+        if($conn->query($sql)){
+            echo "<script>alert('Xóa thành công')</script>";
+        } else{
+            echo "Xóa thất bại";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -54,7 +57,7 @@
         require_once 'header.php';
     ?>
     <div class="page">
-        <div class="title"><p>Xóa tài khoản: <?php echo $username; ?></p></div>
+        <div class="title"><p>Xóa chương: <?php echo $chuong; ?></p></div>
             <form action="#" method="POST">
                 <div class="container">
                     <label for="delete"><b>Bạn chắc chắn muốn xóa?</b></label><br>

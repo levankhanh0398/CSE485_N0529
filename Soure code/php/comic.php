@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="../js/jquery-3.3.1.js"></script>
-    <script src="../js/ebook.js"></script>
+    <script src="../js/comic.js"></script>
 
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/bookStyle.css">
     <link rel="stylesheet" href="../css/css/bootstrap.min.css">
 
-    <title>Sách điện tử</title>
+    <title>Truyện tranh</title>
     
 </head>
 <body>
@@ -25,7 +25,7 @@
     <div class="containers">
         <div class="menu">
             <div class="title">
-                <p><b>Sách điện tử</b></p>
+                <p><b>Truyện tranh</b></p>
             </div>
             <div class="select">
                 <select class="theloai">
@@ -48,13 +48,10 @@
                 <button class="next" style="color: #FFFFFF; background-color: #00FF00">Tiếp</button>
                 <button class="back" style="color: #FFFFFF; background-color: #00FF00; display : none; float: left ">Quay lại</button>
             </div>
-        </div>      
+        </div>        
     </div>
     <?php
         require_once "footer.php";
     ?>
-
-
-
 </body>
 </html>
