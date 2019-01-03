@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../css/indexStyle.css">
+    <link rel="stylesheet" href="../css/bookStyle.css">
     <link rel="stylesheet" href="../css/css/bootstrap.min.css">
 
     <title>Sách hay</title>
@@ -49,23 +50,25 @@
     </div>
 
     <div class="container-content">
-        <!-- <div class="container-content-left">
-            <div class="tl"><p>Thể Loại<p></div>
-            <ul>
-                <a href="php/vanhoc.php"><p>Văn học</p></a><br>
-                <a href="php/khoahoc.php"><p>Khoa học</p></a><br>
-                <a href="php/kinang.php"><p>Kĩ năng</p></a><br>
-                <a href="php/thieunhi.php"><p>Thiếu nhi</p></a><br>
-                <a href="php/tieuthuyet.php"><p>Tiểu thuyết</p></a><br>
-                <a href="php/trinhtham.php"><p>Trinh thám</p></a><br>
-                <a href="php/toanhoc.php"><p>Toán học</p></a><br>
-                <a href="php/tienganh.php"><p>Tiếng anh</p></a><br>
-                <a href="php/tamly.php"><p>Tâm lý</p></a><br>
-            </ul>
-        </div> -->
-        <!-- <div class="container-content-right">
-            <div class="hot"><p>HOT<p></div>
-        </div> -->
+        <div class="hot"><p>HOT<p></div>
+        <div class="content">
+            <?php
+            require_once "dbConnect.php";
+            $sql = " SELECT * FROM `sach` ORDER by luotxem DESC limit 0, 6 ";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+                echo "<div class='book'>";
+                echo "<div class='imgBook'>";
+                echo "<a href='infoBook.php?tensach=" .$row['tenSach'] ."&id=" .$row['idSach'] ."'><img src='../" .$row['anhbia'] ."' alt='update' style='width:160px; height:226px; cursor: pointer;' ></a>";
+                echo "</div>";
+                echo "<div class='titleBook'>";
+                echo "<a href='infoBook.php?tensach=" .$row["tenSach"] ."&id=" .$row['idSach'] ."'>" .$row["tenSach"]. "</a>";
+                echo "<p class='view' style= margin-top:150px;'>Lượt xem: " .$row['luotxem'] ."</p>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+        </div>
     </div>
 
     <?php
